@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ws.mybatisplus.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.ws.mybatisplus.entity.Role">
+        <!--@mbg.generated-->
+        <!--@Table `role`-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="authArea" jdbcType="VARCHAR" property="autharea"/>
+        <result column="authCity" jdbcType="VARCHAR" property="authcity"/>
+        <result column="userid" jdbcType="VARCHAR" property="userid"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `name`, authArea, authCity , userid
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from `role`
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete from `role`
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ws.mybatisplus.entity.Role"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into `role` (`name`, authArea, authCity
+        )
+        values (#{name,jdbcType=VARCHAR}, #{autharea,jdbcType=VARCHAR}, #{authcity,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ws.mybatisplus.entity.Role"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into `role`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="autharea != null">
+                authArea,
+            </if>
+            <if test="authcity != null">
+                authCity,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="autharea != null">
+                #{autharea,jdbcType=VARCHAR},
+            </if>
+            <if test="authcity != null">
+                #{authcity,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ws.mybatisplus.entity.Role">
+        <!--@mbg.generated-->
+        update `role`
+        <set>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="autharea != null">
+                authArea = #{autharea,jdbcType=VARCHAR},
+            </if>
+            <if test="authcity != null">
+                authCity = #{authcity,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ws.mybatisplus.entity.Role">
+        <!--@mbg.generated-->
+        update `role`
+        set `name` = #{name,jdbcType=VARCHAR},
+        authArea = #{autharea,jdbcType=VARCHAR},
+        authCity = #{authcity,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

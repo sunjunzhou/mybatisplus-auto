@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.CatagoryMappingsDetailMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.CatagoryMappingsDetail">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="catagoryMappingId" column="catagory_mapping_id" jdbcType="VARCHAR"/>
+            <result property="itemId" column="item_id" jdbcType="VARCHAR"/>
+            <result property="itemCode" column="item_code" jdbcType="VARCHAR"/>
+            <result property="accountingMappingValue" column="accounting_mapping_value" jdbcType="VARCHAR"/>
+            <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,catagory_mapping_id,item_id,
+        item_code,accounting_mapping_value,create_by,
+        create_time,update_by,update_time
+    </sql>
+</mapper>

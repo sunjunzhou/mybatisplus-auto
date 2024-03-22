@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ws.mybatisplus.mapper.AuClassificationsMapper">
+
+    <resultMap id="BaseResultMap" type="com.ws.mybatisplus.entity.AuClassifications">
+            <id property="classificationFixedId" column="classification_fixed_id" jdbcType="INTEGER"/>
+            <id property="publishedYear" column="published_year" jdbcType="INTEGER"/>
+            <result property="awardFixedId" column="award_fixed_id" jdbcType="INTEGER"/>
+            <result property="basePayRateId" column="base_pay_rate_id" jdbcType="VARCHAR"/>
+            <result property="baseRate" column="base_rate" jdbcType="DECIMAL"/>
+            <result property="baseRateType" column="base_rate_type" jdbcType="VARCHAR"/>
+            <result property="calculatedPayRateId" column="calculated_pay_rate_id" jdbcType="VARCHAR"/>
+            <result property="calculatedRateType" column="calculated_rate_type" jdbcType="VARCHAR"/>
+            <result property="calculatedRate" column="calculated_rate" jdbcType="DECIMAL"/>
+            <result property="classification" column="classification" jdbcType="VARCHAR"/>
+            <result property="classificationLevel" column="classification_level" jdbcType="INTEGER"/>
+            <result property="clauseDescription" column="clause_description" jdbcType="VARCHAR"/>
+            <result property="clauseFixedId" column="clause_fixed_id" jdbcType="INTEGER"/>
+            <result property="clauses" column="clauses" jdbcType="VARCHAR"/>
+            <result property="code" column="code" jdbcType="VARCHAR"/>
+            <result property="employeeRateTypeCode" column="employee_rate_type_code" jdbcType="VARCHAR"/>
+            <result property="lastModifiedDatetime" column="last_modified_datetime" jdbcType="TIMESTAMP"/>
+            <result property="nextDownClassificationFixedId" column="next_down_classification_fixed_id" jdbcType="INTEGER"/>
+            <result property="nextUpClassificationFixedId" column="next_up_classification_fixed_id" jdbcType="INTEGER"/>
+            <result property="operativeFrom" column="operative_from" jdbcType="DATE"/>
+            <result property="operativeTo" column="operative_to" jdbcType="DATE"/>
+            <result property="parentClassificationName" column="parent_classification_name" jdbcType="VARCHAR"/>
+            <result property="versionNumber" column="version_number" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        classification_fixed_id,published_year,award_fixed_id,
+        base_pay_rate_id,base_rate,base_rate_type,
+        calculated_pay_rate_id,calculated_rate_type,calculated_rate,
+        classification,classification_level,clause_description,
+        clause_fixed_id,clauses,code,
+        employee_rate_type_code,last_modified_datetime,next_down_classification_fixed_id,
+        next_up_classification_fixed_id,operative_from,operative_to,
+        parent_classification_name,version_number
+    </sql>
+</mapper>

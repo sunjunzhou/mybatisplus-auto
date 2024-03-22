@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.BizAttendCalculationMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.BizAttendCalculation">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="attendDay" column="attend_day" jdbcType="DATE"/>
+            <result property="employeeId" column="employee_id" jdbcType="VARCHAR"/>
+            <result property="beLateLength" column="be_late_length" jdbcType="DECIMAL"/>
+            <result property="leaveEarlyLength" column="leave_early_length" jdbcType="DECIMAL"/>
+            <result property="beLateTime" column="be_late_time" jdbcType="DECIMAL"/>
+            <result property="leaveEarlyTime" column="leave_early_time" jdbcType="DECIMAL"/>
+            <result property="shiftLabor" column="shift_labor" jdbcType="DECIMAL"/>
+            <result property="actualIn" column="actual_in" jdbcType="TIMESTAMP"/>
+            <result property="actualOff" column="actual_off" jdbcType="TIMESTAMP"/>
+            <result property="actualInText" column="actual_in_text" jdbcType="VARCHAR"/>
+            <result property="actualOffText" column="actual_off_text" jdbcType="VARCHAR"/>
+            <result property="attendStatus" column="attend_status" jdbcType="VARCHAR"/>
+            <result property="laborLength" column="labor_length" jdbcType="DECIMAL"/>
+            <result property="earliestCard" column="earliest_card" jdbcType="TIMESTAMP"/>
+            <result property="lateCard" column="late_card" jdbcType="TIMESTAMP"/>
+            <result property="confirm" column="confirm" jdbcType="VARCHAR"/>
+            <result property="afterAdjust" column="after_adjust" jdbcType="DECIMAL"/>
+            <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+            <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="workingOvertime" column="working_overtime" jdbcType="DECIMAL"/>
+            <result property="holidayOvertime" column="holiday_overtime" jdbcType="DECIMAL"/>
+            <result property="dayOffOvertime" column="day_off_overtime" jdbcType="DECIMAL"/>
+            <result property="paidLeave" column="paid_leave" jdbcType="DECIMAL"/>
+            <result property="statutoryLeave" column="statutory_leave" jdbcType="DECIMAL"/>
+            <result property="annualLeave" column="annual_leave" jdbcType="DECIMAL"/>
+            <result property="sickLeave" column="sick_leave" jdbcType="DECIMAL"/>
+            <result property="unpaidLeave" column="unpaid_leave" jdbcType="DECIMAL"/>
+            <result property="unpaidSickLeave" column="unpaid_sick_leave" jdbcType="DECIMAL"/>
+            <result property="adjustmentLeave" column="adjustment_leave" jdbcType="DECIMAL"/>
+            <result property="adjust" column="adjust" jdbcType="DECIMAL"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="leaveTime" column="leave_time" jdbcType="DECIMAL"/>
+            <result property="shiftIn" column="shift_in" jdbcType="VARCHAR"/>
+            <result property="shiftOff" column="shift_off" jdbcType="VARCHAR"/>
+            <result property="absenceLength" column="absence_length" jdbcType="DECIMAL"/>
+            <result property="definedItem1" column="defined_item1" jdbcType="DECIMAL"/>
+            <result property="definedItem2" column="defined_item2" jdbcType="DECIMAL"/>
+            <result property="definedItem3" column="defined_item3" jdbcType="DECIMAL"/>
+            <result property="definedItem4" column="defined_item4" jdbcType="DECIMAL"/>
+            <result property="definedItem5" column="defined_item5" jdbcType="DECIMAL"/>
+            <result property="definedItem6" column="defined_item6" jdbcType="DECIMAL"/>
+            <result property="definedItem7" column="defined_item7" jdbcType="DECIMAL"/>
+            <result property="definedItem8" column="defined_item8" jdbcType="DECIMAL"/>
+            <result property="definedItem9" column="defined_item9" jdbcType="DECIMAL"/>
+            <result property="definedItem10" column="defined_item10" jdbcType="DECIMAL"/>
+            <result property="ordinaryHours" column="ordinary_hours" jdbcType="DECIMAL"/>
+            <result property="satHours" column="sat_hours" jdbcType="DECIMAL"/>
+            <result property="sunHours" column="sun_hours" jdbcType="DECIMAL"/>
+            <result property="publicHolidayHours" column="public_holiday_hours" jdbcType="DECIMAL"/>
+            <result property="morningShiftHours" column="morning_shift_hours" jdbcType="DECIMAL"/>
+            <result property="afternoonShiftHours" column="afternoon_shift_hours" jdbcType="DECIMAL"/>
+            <result property="nightShiftHours" column="night_shift_hours" jdbcType="DECIMAL"/>
+            <result property="mealBreakTimes" column="meal_break_times" jdbcType="DECIMAL"/>
+            <result property="otBefore" column="ot_before" jdbcType="DECIMAL"/>
+            <result property="otAfter" column="ot_after" jdbcType="DECIMAL"/>
+            <result property="ordinaryRates" column="ordinary_rates" jdbcType="DECIMAL"/>
+            <result property="satRates" column="sat_rates" jdbcType="DECIMAL"/>
+            <result property="sunRates" column="sun_rates" jdbcType="DECIMAL"/>
+            <result property="publicHolidayRates" column="public_holiday_rates" jdbcType="DECIMAL"/>
+            <result property="morningShiftRates" column="morning_shift_rates" jdbcType="DECIMAL"/>
+            <result property="afternoonShiftRates" column="afternoon_shift_rates" jdbcType="DECIMAL"/>
+            <result property="nightShiftRates" column="night_shift_rates" jdbcType="DECIMAL"/>
+            <result property="otBeforeRates" column="ot_before_rates" jdbcType="DECIMAL"/>
+            <result property="otAfterRates" column="ot_after_rates" jdbcType="DECIMAL"/>
+            <result property="ordinaryPenalty" column="ordinary_penalty" jdbcType="DECIMAL"/>
+            <result property="satPenalty" column="sat_penalty" jdbcType="DECIMAL"/>
+            <result property="sunPenalty" column="sun_penalty" jdbcType="DECIMAL"/>
+            <result property="publicHolidayPenalty" column="public_holiday_penalty" jdbcType="DECIMAL"/>
+            <result property="morningShiftPenalty" column="morning_shift_penalty" jdbcType="DECIMAL"/>
+            <result property="afternoonShiftPenalty" column="afternoon_shift_penalty" jdbcType="DECIMAL"/>
+            <result property="nightShiftPenalty" column="night_shift_penalty" jdbcType="DECIMAL"/>
+            <result property="otBeforePenalty" column="ot_before_penalty" jdbcType="DECIMAL"/>
+            <result property="otAfterPenalty" column="ot_after_penalty" jdbcType="DECIMAL"/>
+
+            <result property="overtimeSaturdayFirstHours" column="overtime_saturday_first_hours" jdbcType="DECIMAL"/>
+            <result property="overtimeSaturdayAfterHours" column="overtime_saturday_after_hours" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayFirstHours" column="overtime_sunday_first_hours" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayAfterHours" column="overtime_sunday_after_hours" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayFirstHours" column="overtime_public_holiday_first_hours" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayAfterHours" column="overtime_public_holiday_after_hours" jdbcType="DECIMAL"/>
+            <result property="overtimeSaturdayFirstHourlyRate" column="overtime_saturday_first_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimeSaturdayAfterHourlyRate" column="overtime_saturday_after_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayFirstHourlyRate" column="overtime_sunday_first_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayAfterHourlyRate" column="overtime_sunday_after_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayFirstHourlyRate" column="overtime_public_holiday_first_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayAfterHourlyRate" column="overtime_public_holiday_after_hourly_rate" jdbcType="DECIMAL"/>
+            <result property="overtimeSaturdayFirstHoursPay" column="overtime_saturday_first_hours_pay" jdbcType="DECIMAL"/>
+            <result property="overtimeSaturdayAfterHoursPay" column="overtime_saturday_after_hours_pay" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayFirstHoursPay" column="overtime_sunday_first_hours_pay" jdbcType="DECIMAL"/>
+            <result property="overtimeSundayAfterHoursPay" column="overtime_sunday_after_hours_pay" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayFirstHoursPay" column="overtime_public_holiday_first_hours_pay" jdbcType="DECIMAL"/>
+            <result property="overtimePublicHolidayAfterHoursPay" column="overtime_public_holiday_after_hours_pay" jdbcType="DECIMAL"/>
+            <result property="timeOffInLieu" column="time_off_in_lieu" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,attend_day,employee_id,
+        be_late_length,leave_early_length,be_late_time,
+        leave_early_time,shift_labor,actual_in,
+        actual_off,actual_in_text,actual_off_text,
+        attend_status,labor_length,earliest_card,
+        late_card,confirm,after_adjust,
+        tenant_id,create_by,create_time,
+        update_by,update_time,working_overtime,
+        holiday_overtime,day_off_overtime,paid_leave,
+        statutory_leave,annual_leave,sick_leave,
+        unpaid_leave,unpaid_sick_leave,adjustment_leave,
+        adjust,type,leave_time,
+        shift_in,shift_off,absence_length,
+        defined_item1,defined_item2,defined_item3,
+        defined_item4,defined_item5,defined_item6,
+        defined_item7,defined_item8,defined_item9,
+        defined_item10,ordinary_hours,sat_hours,
+        sun_hours,public_holiday_hours,morning_shift_hours,
+        afternoon_shift_hours,night_shift_hours,meal_break_times,
+        ot_before,ot_after,ordinary_rates,
+        sat_rates,sun_rates,public_holiday_rates,
+        morning_shift_rates,afternoon_shift_rates,night_shift_rates,
+        ot_before_rates,ot_after_rates,ordinary_penalty,
+        sat_penalty,sun_penalty,public_holiday_penalty,
+        morning_shift_penalty,afternoon_shift_penalty,night_shift_penalty,
+        ot_before_penalty,ot_after_penalty,overtime_saturday_first_hours,
+        overtime_saturday_after_hours,overtime_sunday_first_hours,overtime_sunday_after_hours,
+        overtime_public_holiday_first_hours,overtime_public_holiday_after_hours,overtime_saturday_first_hourly_rate,
+        overtime_saturday_after_hourly_rate,overtime_sunday_first_hourly_rate,overtime_sunday_after_hourly_rate,
+        overtime_public_holiday_first_hourly_rate,overtime_public_holiday_after_hourly_rate,overtime_saturday_first_hours_pay,
+        overtime_saturday_after_hours_pay,overtime_sunday_first_hours_pay,overtime_sunday_after_hours_pay,
+        overtime_public_holiday_first_hours_pay,overtime_public_holiday_after_hours_pay,time_off_in_lieu
+    </sql>
+</mapper>

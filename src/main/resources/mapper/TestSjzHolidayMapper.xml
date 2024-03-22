@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ws.mybatisplus.mapper.TestSjzHolidayMapper">
+  <resultMap id="BaseResultMap" type="com.ws.mybatisplus.entity.TestSjzHoliday">
+    <!--@mbg.generated-->
+    <!--@Table test_sjz_holiday-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="holiday_type" jdbcType="VARCHAR" property="holidayType" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="leave_time" jdbcType="DECIMAL" property="leaveTime" />
+    <result column="employeeName" jdbcType="VARCHAR" property="employeename" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, employee_id, holiday_type, start_date, remark, leave_time, employeeName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from test_sjz_holiday
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from test_sjz_holiday
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ws.mybatisplus.entity.TestSjzHoliday" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into test_sjz_holiday (`name`, employee_id, holiday_type, 
+      start_date, remark, leave_time, 
+      employeeName)
+    values (#{name,jdbcType=VARCHAR}, #{employeeId,jdbcType=VARCHAR}, #{holidayType,jdbcType=VARCHAR}, 
+      #{startDate,jdbcType=DATE}, #{remark,jdbcType=VARCHAR}, #{leaveTime,jdbcType=DECIMAL}, 
+      #{employeename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ws.mybatisplus.entity.TestSjzHoliday" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into test_sjz_holiday
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="holidayType != null">
+        holiday_type,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="leaveTime != null">
+        leave_time,
+      </if>
+      <if test="employeename != null">
+        employeeName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="holidayType != null">
+        #{holidayType,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        #{leaveTime,jdbcType=DECIMAL},
+      </if>
+      <if test="employeename != null">
+        #{employeename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ws.mybatisplus.entity.TestSjzHoliday">
+    <!--@mbg.generated-->
+    update test_sjz_holiday
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="holidayType != null">
+        holiday_type = #{holidayType,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        leave_time = #{leaveTime,jdbcType=DECIMAL},
+      </if>
+      <if test="employeename != null">
+        employeeName = #{employeename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ws.mybatisplus.entity.TestSjzHoliday">
+    <!--@mbg.generated-->
+    update test_sjz_holiday
+    set `name` = #{name,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      holiday_type = #{holidayType,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR},
+      leave_time = #{leaveTime,jdbcType=DECIMAL},
+      employeeName = #{employeename,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+<!--auto generated by MybatisCodeHelper on 2021-04-09-->
+  <select id="selectByAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from test_sjz_holiday
+    <where>
+      <if test="id != null">
+        and id=#{id,jdbcType=INTEGER}
+      </if>
+      <if test="name != null">
+        and `name`=#{name,jdbcType=VARCHAR}
+      </if>
+      <if test="employeeId != null">
+        and employee_id=#{employeeId,jdbcType=VARCHAR}
+      </if>
+      <if test="holidayType != null">
+        and holiday_type=#{holidayType,jdbcType=VARCHAR}
+      </if>
+      <if test="startDate != null">
+        and start_date=#{startDate,jdbcType=DATE}
+      </if>
+      <if test="remark != null">
+        and remark=#{remark,jdbcType=VARCHAR}
+      </if>
+      <if test="leaveTime != null">
+        and leave_time=#{leaveTime,jdbcType=DECIMAL}
+      </if>
+      <if test="employeename != null">
+        and employeeName=#{employeename,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
+
+  <select id="seleceAllInfoPage" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from test_sjz_holiday
+  </select>
+</mapper>
